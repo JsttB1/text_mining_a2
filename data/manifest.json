@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/alexbrandsen/Archaeo-NER-data-English",
+  "revision": "4ad5ba1eb23ade177bf2ccc73ac884ce580b8a69",
+  "files": {
+    "train.txt": {
+      "url": "https://raw.githubusercontent.com/alexbrandsen/Archaeo-NER-data-English/4ad5ba1eb23ade177bf2ccc73ac884ce580b8a69/5-folds-test-train-val-split/fold1/train.txt",
+      "bytes": 593676,
+      "sha256": "295196e516092d6bdfa9022c99a1c58c1366dc4a65ac53d3b7655d0ee389fc96"
+    },
+    "val.txt": {
+      "url": "https://raw.githubusercontent.com/alexbrandsen/Archaeo-NER-data-English/4ad5ba1eb23ade177bf2ccc73ac884ce580b8a69/5-folds-test-train-val-split/fold1/val.txt",
+      "bytes": 194401,
+      "sha256": "66d42926a8cd01ccde472af02fcfefeff6c0b4014c912bd0122c3a120e823218"
+    },
+    "test.txt": {
+      "url": "https://raw.githubusercontent.com/alexbrandsen/Archaeo-NER-data-English/4ad5ba1eb23ade177bf2ccc73ac884ce580b8a69/5-folds-test-train-val-split/fold1/test.txt",
+      "bytes": 192781,
+      "sha256": "aa9925c477e1acb3e4000df266a19402a9818fe5feebab20731039ecd33f1cf4"
+    }
+  }
+}

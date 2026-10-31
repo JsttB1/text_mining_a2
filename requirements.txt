@@ -1,0 +1,11 @@
+# Tested resolution is recorded in requirements-lock.txt (Python 3.12, macOS arm64).
+torch>=2.6,<3
+transformers>=4.50,<5
+datasets>=3,<5
+accelerate>=1,<2
+evaluate>=0.4,<0.5
+seqeval==1.2.2
+scikit-learn>=1.6,<2
+numpy>=1.26,<3
+pandas>=2.2,<3
+matplotlib>=3.9,<4
