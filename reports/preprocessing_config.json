@@ -1,0 +1,89 @@
+{
+  "checkpoint": "google-bert/bert-base-cased",
+  "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+  "max_length": 512,
+  "truncation": false,
+  "overflow_policy": "nonoverlapping_whole_word_chunks_with_source_offsets",
+  "label_strategy": "first_subword_only",
+  "ignore_index": -100,
+  "padding": "dynamic_per_batch",
+  "label_names": [
+    "O",
+    "B-ART",
+    "I-ART",
+    "B-CON",
+    "I-CON",
+    "B-LOC",
+    "I-LOC",
+    "B-MAT",
+    "I-MAT",
+    "B-PER",
+    "I-PER",
+    "B-SPE",
+    "I-SPE"
+  ],
+  "source_manifest": {
+    "repository": "https://github.com/alexbrandsen/Archaeo-NER-data-English",
+    "revision": "4ad5ba1eb23ade177bf2ccc73ac884ce580b8a69",
+    "files": {
+      "train.txt": {
+        "url": "https://raw.githubusercontent.com/alexbrandsen/Archaeo-NER-data-English/4ad5ba1eb23ade177bf2ccc73ac884ce580b8a69/5-folds-test-train-val-split/fold1/train.txt",
+        "bytes": 593676,
+        "sha256": "295196e516092d6bdfa9022c99a1c58c1366dc4a65ac53d3b7655d0ee389fc96"
+      },
+      "val.txt": {
+        "url": "https://raw.githubusercontent.com/alexbrandsen/Archaeo-NER-data-English/4ad5ba1eb23ade177bf2ccc73ac884ce580b8a69/5-folds-test-train-val-split/fold1/val.txt",
+        "bytes": 194401,
+        "sha256": "66d42926a8cd01ccde472af02fcfefeff6c0b4014c912bd0122c3a120e823218"
+      },
+      "test.txt": {
+        "url": "https://raw.githubusercontent.com/alexbrandsen/Archaeo-NER-data-English/4ad5ba1eb23ade177bf2ccc73ac884ce580b8a69/5-folds-test-train-val-split/fold1/test.txt",
+        "bytes": 192781,
+        "sha256": "aa9925c477e1acb3e4000df266a19402a9818fe5feebab20731039ecd33f1cf4"
+      }
+    }
+  },
+  "versions": {
+    "transformers": "4.57.6",
+    "datasets": "4.8.5",
+    "tokenizers": "0.22.2",
+    "torch": "2.15.0"
+  },
+  "split_statistics": {
+    "train": {
+      "source_sequences": 1992,
+      "model_chunks": 1992,
+      "words_preserved": 53178,
+      "input_tokens_including_special": 69218,
+      "max_input_tokens": 336,
+      "ignored_positions": 16040,
+      "continuation_subwords": 12056,
+      "truncated_sequences": 0,
+      "dropped_words": 0
+    },
+    "validation": {
+      "source_sequences": 850,
+      "model_chunks": 851,
+      "words_preserved": 17546,
+      "input_tokens_including_special": 24665,
+      "max_input_tokens": 459,
+      "ignored_positions": 7119,
+      "continuation_subwords": 5417,
+      "truncated_sequences": 0,
+      "dropped_words": 0
+    },
+    "test": {
+      "source_sequences": 864,
+      "model_chunks": 864,
+      "words_preserved": 17537,
+      "input_tokens_including_special": 23576,
+      "max_input_tokens": 137,
+      "ignored_positions": 6039,
+      "continuation_subwords": 4311,
+      "truncated_sequences": 0,
+      "dropped_words": 0
+    }
+  },
+  "saved_dataset_round_trip_verified": true,
+  "dynamic_padding_verified": true
+}

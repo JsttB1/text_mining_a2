@@ -1,0 +1,201 @@
+{
+  "token_labels": {
+    "B-ART": {
+      "precision": 0.5509554140127388,
+      "recall": 0.6865079365079365,
+      "f1": 0.6113074204946997,
+      "support": 252,
+      "predicted": 314,
+      "tp": 173,
+      "fp": 141,
+      "fn": 79
+    },
+    "I-ART": {
+      "precision": 0.52,
+      "recall": 0.2689655172413793,
+      "f1": 0.35454545454545455,
+      "support": 145,
+      "predicted": 75,
+      "tp": 39,
+      "fp": 36,
+      "fn": 106
+    },
+    "B-CON": {
+      "precision": 0.38549618320610685,
+      "recall": 0.6196319018404908,
+      "f1": 0.4752941176470588,
+      "support": 163,
+      "predicted": 262,
+      "tp": 101,
+      "fp": 161,
+      "fn": 62
+    },
+    "I-CON": {
+      "precision": 0.5,
+      "recall": 0.14,
+      "f1": 0.21875,
+      "support": 50,
+      "predicted": 14,
+      "tp": 7,
+      "fp": 7,
+      "fn": 43
+    },
+    "B-LOC": {
+      "precision": 0.7391304347826086,
+      "recall": 0.7986577181208053,
+      "f1": 0.7677419354838709,
+      "support": 149,
+      "predicted": 161,
+      "tp": 119,
+      "fp": 42,
+      "fn": 30
+    },
+    "I-LOC": {
+      "precision": 0.7157894736842105,
+      "recall": 0.7391304347826086,
+      "f1": 0.7272727272727273,
+      "support": 92,
+      "predicted": 95,
+      "tp": 68,
+      "fp": 27,
+      "fn": 24
+    },
+    "B-MAT": {
+      "precision": 0.47058823529411764,
+      "recall": 0.4,
+      "f1": 0.43243243243243246,
+      "support": 40,
+      "predicted": 34,
+      "tp": 16,
+      "fp": 18,
+      "fn": 24
+    },
+    "I-MAT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 7,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 7
+    },
+    "B-PER": {
+      "precision": 0.7822784810126582,
+      "recall": 0.9169139465875371,
+      "f1": 0.8442622950819673,
+      "support": 337,
+      "predicted": 395,
+      "tp": 309,
+      "fp": 86,
+      "fn": 28
+    },
+    "I-PER": {
+      "precision": 0.91324200913242,
+      "recall": 0.7092198581560284,
+      "f1": 0.7984031936127745,
+      "support": 282,
+      "predicted": 219,
+      "tp": 200,
+      "fp": 19,
+      "fn": 82
+    },
+    "B-SPE": {
+      "precision": 0.45098039215686275,
+      "recall": 0.7419354838709677,
+      "f1": 0.5609756097560976,
+      "support": 31,
+      "predicted": 51,
+      "tp": 23,
+      "fp": 28,
+      "fn": 8
+    },
+    "I-SPE": {
+      "precision": 1.0,
+      "recall": 0.2857142857142857,
+      "f1": 0.4444444444444444,
+      "support": 14,
+      "predicted": 4,
+      "tp": 4,
+      "fp": 0,
+      "fn": 10
+    }
+  },
+  "entities": {
+    "ART": {
+      "precision": 0.4840764331210191,
+      "recall": 0.6031746031746031,
+      "f1": 0.5371024734982333,
+      "support": 252,
+      "predicted": 314,
+      "tp": 152,
+      "fp": 162,
+      "fn": 100
+    },
+    "CON": {
+      "precision": 0.3473282442748092,
+      "recall": 0.558282208588957,
+      "f1": 0.42823529411764705,
+      "support": 163,
+      "predicted": 262,
+      "tp": 91,
+      "fp": 171,
+      "fn": 72
+    },
+    "LOC": {
+      "precision": 0.6583850931677019,
+      "recall": 0.7114093959731543,
+      "f1": 0.6838709677419355,
+      "support": 149,
+      "predicted": 161,
+      "tp": 106,
+      "fp": 55,
+      "fn": 43
+    },
+    "MAT": {
+      "precision": 0.4117647058823529,
+      "recall": 0.35,
+      "f1": 0.3783783783783784,
+      "support": 40,
+      "predicted": 34,
+      "tp": 14,
+      "fp": 20,
+      "fn": 26
+    },
+    "PER": {
+      "precision": 0.7113924050632912,
+      "recall": 0.8338278931750742,
+      "f1": 0.76775956284153,
+      "support": 337,
+      "predicted": 395,
+      "tp": 281,
+      "fp": 114,
+      "fn": 56
+    },
+    "SPE": {
+      "precision": 0.35294117647058826,
+      "recall": 0.5806451612903226,
+      "f1": 0.43902439024390244,
+      "support": 31,
+      "predicted": 51,
+      "tp": 18,
+      "fp": 33,
+      "fn": 13
+    }
+  },
+  "entity_micro": {
+    "precision": 0.5439605587510271,
+    "recall": 0.6810699588477366,
+    "f1": 0.6048423937871175,
+    "support": 972,
+    "predicted": 1217,
+    "tp": 662,
+    "fp": 555,
+    "fn": 310
+  },
+  "entity_macro_f1": 0.5390618444702712,
+  "word_accuracy": 0.9485922717428473,
+  "sentences": 850,
+  "words": 17546,
+  "policy": "strict IOB2 exact spans and type; orphan I-tags ignored as entities; zero_division=0; macro over all six types; O excluded from entity averages"
+}

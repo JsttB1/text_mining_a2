@@ -1,0 +1,22 @@
+{
+  "validation": {
+    "sentences": 850,
+    "words": 17546,
+    "all_source_words_and_labels_match": true,
+    "all_metrics_match_independent_libraries": true
+  },
+  "test": {
+    "sentences": 864,
+    "words": 17537,
+    "all_source_words_and_labels_match": true,
+    "all_metrics_match_independent_libraries": true
+  },
+  "saved_model": {
+    "reload_verified": true,
+    "validation_sentences_reproduced": 8,
+    "label_mapping_verified": true,
+    "parameters": 107729677,
+    "sha256": "5322662b351d6f97ea86a0cbdd702ac1db95b05f5247a6916f34a67a79091d32",
+    "device": "mps"
+  }
+}

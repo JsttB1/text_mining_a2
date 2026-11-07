@@ -1,0 +1,98 @@
+{
+  "train": {
+    "sequences": 1992,
+    "word_tokens": 53178,
+    "min_words": 2,
+    "max_words": 250,
+    "mean_words": 26.7,
+    "label_counts": {
+      "O": 47321,
+      "B-ART": 1000,
+      "I-ART": 278,
+      "B-CON": 1064,
+      "I-CON": 153,
+      "B-LOC": 342,
+      "I-LOC": 430,
+      "B-MAT": 150,
+      "I-MAT": 26,
+      "B-PER": 1213,
+      "I-PER": 1071,
+      "B-SPE": 121,
+      "I-SPE": 9
+    },
+    "entity_starts": {
+      "ART": 1000,
+      "CON": 1064,
+      "LOC": 342,
+      "MAT": 150,
+      "PER": 1213,
+      "SPE": 121
+    },
+    "invalid_iob2_inside_tags": 0,
+    "sha256_verified": true
+  },
+  "validation": {
+    "sequences": 850,
+    "word_tokens": 17546,
+    "min_words": 2,
+    "max_words": 116,
+    "mean_words": 20.64,
+    "label_counts": {
+      "O": 15984,
+      "B-ART": 252,
+      "I-ART": 145,
+      "B-CON": 163,
+      "I-CON": 50,
+      "B-LOC": 149,
+      "I-LOC": 92,
+      "B-MAT": 40,
+      "I-MAT": 7,
+      "B-PER": 337,
+      "I-PER": 282,
+      "B-SPE": 31,
+      "I-SPE": 14
+    },
+    "entity_starts": {
+      "ART": 252,
+      "CON": 163,
+      "LOC": 149,
+      "MAT": 40,
+      "PER": 337,
+      "SPE": 31
+    },
+    "invalid_iob2_inside_tags": 0,
+    "sha256_verified": true
+  },
+  "test": {
+    "sequences": 864,
+    "word_tokens": 17537,
+    "min_words": 2,
+    "max_words": 115,
+    "mean_words": 20.3,
+    "label_counts": {
+      "O": 16290,
+      "B-ART": 168,
+      "I-ART": 75,
+      "B-CON": 147,
+      "I-CON": 75,
+      "B-LOC": 144,
+      "I-LOC": 148,
+      "B-MAT": 59,
+      "I-MAT": 6,
+      "B-PER": 283,
+      "I-PER": 140,
+      "B-SPE": 2,
+      "I-SPE": 0
+    },
+    "entity_starts": {
+      "ART": 168,
+      "CON": 147,
+      "LOC": 144,
+      "MAT": 59,
+      "PER": 283,
+      "SPE": 2
+    },
+    "invalid_iob2_inside_tags": 0,
+    "sha256_verified": true
+  }
+}
