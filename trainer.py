@@ -42,7 +42,11 @@ def train_and_evaluate(
         label2id=LABEL_TO_ID,
     )
 
-    # 2. Setup training arguments
+    # 2. Setup training arguments (compatible with both newer and older transformers)
+    import inspect
+    ta_params = inspect.signature(TrainingArguments.__init__).parameters
+    eval_key = "eval_strategy" if "eval_strategy" in ta_params else "evaluation_strategy"
+
     training_args = TrainingArguments(
         output_dir=str(output_path),
         learning_rate=learning_rate,
@@ -50,23 +54,26 @@ def train_and_evaluate(
         num_train_epochs=epochs,
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
-        evaluation_strategy="epoch",
         save_strategy="epoch",
         save_total_limit=1,
         seed=seed,
         logging_steps=50,
         report_to="none",
+        **{eval_key: "epoch"},
     )
 
     # 3. Initialize Trainer
+    trainer_params = inspect.signature(Trainer.__init__).parameters
+    tokenizer_kwarg = {"processing_class": tokenizer} if "processing_class" in trainer_params else {"tokenizer": tokenizer}
+
     trainer = Trainer(
         model=model,
         args=training_args,
         train_dataset=tokenized_dataset["train"],
         eval_dataset=tokenized_dataset["validation"],
-        tokenizer=tokenizer,
         data_collator=DataCollatorForTokenClassification(tokenizer),
         compute_metrics=build_compute_metrics_fn(),
+        **tokenizer_kwarg,
     )
 
     # 4. Train model (if not evaluation-only)
