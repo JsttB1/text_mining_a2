@@ -1,13 +1,17 @@
-"""Data loading and IOB file parsing for Archaeological NER."""
-
 from collections import Counter
 from pathlib import Path
-from datasets import Dataset, DatasetDict
+from datasets import ClassLabel, Dataset, DatasetDict, Features, Sequence, Value
 
 ENTITY_TYPES = ["ART", "CON", "LOC", "MAT", "PER", "SPE"]
 LABEL_NAMES = ["O"] + [f"{p}-{e}" for e in ENTITY_TYPES for p in ("B", "I")]
 LABEL_TO_ID = {label: i for i, label in enumerate(LABEL_NAMES)}
 ID_TO_LABEL = {i: label for i, label in enumerate(LABEL_NAMES)}
+
+DATASET_FEATURES = Features({
+    "id": Value("string"),
+    "tokens": Sequence(Value("string")),
+    "ner_tags": Sequence(ClassLabel(names=LABEL_NAMES)),
+})
 
 
 def load_iob_file(filepath: Path | str) -> list[dict]:
@@ -49,8 +53,7 @@ def load_iob_file(filepath: Path | str) -> list[dict]:
     return sentences
 
 
-def load_all_splits(data_dir: Path | str) -> tuple[dict[str, list[dict]], DatasetDict]:
-    """Load train, validation, and test IOB files from directory and build a DatasetDict."""
+def load_all_splits(data_dir):
     data_path = Path(data_dir)
     raw_splits = {
         "train": load_iob_file(data_path / "train.txt"),
@@ -59,14 +62,14 @@ def load_all_splits(data_dir: Path | str) -> tuple[dict[str, list[dict]], Datase
     }
 
     hf_dataset = DatasetDict({
-        split: Dataset.from_list(records) for split, records in raw_splits.items()
+        split: Dataset.from_list(records, features=DATASET_FEATURES)
+        for split, records in raw_splits.items()
     })
 
     return raw_splits, hf_dataset
 
 
-def print_dataset_statistics(raw_splits: dict[str, list[dict]]):
-    """Print sequence counts and entity distributions across splits."""
+def print_dataset_statistics(raw_splits):
     print("=" * 60)
     print("DATASET STATISTICS (Fold 1)")
     print("=" * 60)

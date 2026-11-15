@@ -1,5 +1,3 @@
-"""Download the Archaeo-NER fold1 dataset files from GitHub."""
-
 from pathlib import Path
 from urllib.request import urlopen
 

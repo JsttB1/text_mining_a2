@@ -1,21 +1,15 @@
-"""Subword tokenization and label alignment for token classification."""
-
-from datasets import DatasetDict
 from transformers import AutoTokenizer
 
 DEFAULT_MODEL_CHECKPOINT = "google-bert/bert-base-cased"
 
-
-def get_tokenizer(model_checkpoint: str = DEFAULT_MODEL_CHECKPOINT):
-    """Load pretrained fast tokenizer."""
+def get_tokenizer(model_checkpoint=DEFAULT_MODEL_CHECKPOINT):
     return AutoTokenizer.from_pretrained(model_checkpoint)
 
 
-def align_labels_with_tokens(examples: dict, tokenizer, max_length: int = 512) -> dict:
-    """Align word-level NER tags with subword tokens (Hugging Face NLP Course Chapter 7).
-
-    - The first subword token of each word is assigned that word's gold label.
-    - Subsequent subwords and special tokens are set to -100 to ignore them in loss.
+def align_labels_with_tokens(examples, tokenizer, max_length=512):
+    """Align word-level NER tags with subword tokens:
+    The first subword token of each word is assigned that word's gold label.
+    Subsequent subwords and special tokens are set to -100 to ignore them in loss.
     """
     tokenized_inputs = tokenizer(
         examples["tokens"],
@@ -48,8 +42,7 @@ def align_labels_with_tokens(examples: dict, tokenizer, max_length: int = 512) -
     return tokenized_inputs
 
 
-def tokenize_dataset(hf_dataset: DatasetDict, tokenizer, max_length: int = 512) -> DatasetDict:
-    """Apply subword tokenization and label alignment across all dataset splits."""
+def tokenize_dataset(hf_dataset, tokenizer, max_length=512):
     return hf_dataset.map(
         lambda examples: align_labels_with_tokens(examples, tokenizer, max_length=max_length),
         batched=True,
